@@ -11,7 +11,7 @@ Example
 #### Description
 The Description.
 #### Files
-[a relative link](CHANGES.md)
+[](CHANGES.md)
 
 
 ## Format of changes in source files
