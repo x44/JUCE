@@ -3876,8 +3876,9 @@ private:
                 // so this forces an update when the app is brought to the front
                 if (wParam != FALSE)
                     juce_repeatLastProcessPriority();
-                else
-                    Desktop::getInstance().setKioskModeComponent (nullptr); // turn kiosk mode off if we lose focus
+				// [001] Kiosk Mode Window Gets Normalized on ALT+TAB
+                // else
+                //    Desktop::getInstance().setKioskModeComponent (nullptr); // turn kiosk mode off if we lose focus
 
                 juce_checkCurrentlyFocusedTopLevelWindow();
                 modifiersAtLastCallback = -1;
