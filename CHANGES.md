@@ -23,4 +23,4 @@ The Description.
 #### Description
 Windows only. When pressing ALT+TAB in Kiosk Mode (ie real fullscreen) the window gets normalized.
 #### Files
-[a relative link](modules\juce_gui_basics\native\juce_win32_Windowing.cpp)
+[a relative link](modules/juce_gui_basics/native/juce_win32_Windowing.cpp)
