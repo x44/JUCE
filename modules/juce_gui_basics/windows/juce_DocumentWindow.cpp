@@ -357,4 +357,48 @@ void DocumentWindow::userTriedToCloseWindow()
     closeButtonPressed();
 }
 
+// [002] Fix FullScreen Mode
+bool DocumentWindow::toggleRealFullScreen()
+{
+	bool wantsFullScreen = !isRealFullScreen();
+
+	#if JUCE_WINDOWS
+	if (wantsFullScreen)
+	{
+		bool wasAlwaysOnTop = isAlwaysOnTop();
+		setAlwaysOnTop(true);
+		juce::Desktop::getInstance().setKioskModeComponent(this, true);
+		setAlwaysOnTop(wasAlwaysOnTop);
+	}
+	else
+	{
+		juce::Desktop::getInstance().setKioskModeComponent(nullptr, true);
+	}
+	#endif
+
+	#if JUCE_MAC
+	if (wantsFullScreen)
+	{
+		setFullScreen(wantsFullScreen);
+		juce::Desktop::getInstance().setKioskModeComponent(this, true);
+	}
+	else
+	{
+		juce::Desktop::getInstance().setKioskModeComponent(nullptr, true);
+		setFullScreen(wantsFullScreen);
+	}
+	#endif
+	
+	return wantsFullScreen;
+}
+
+bool DocumentWindow::isRealFullScreen()
+{
+	#if JUCE_MAC
+		return isFullScreen();
+	#else
+		return isKioskMode();
+	#endif
+}
+
 } // namespace juce

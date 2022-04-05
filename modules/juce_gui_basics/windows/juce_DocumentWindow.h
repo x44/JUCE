@@ -223,6 +223,10 @@ public:
     /** Returns the maximise button, (or nullptr if there isn't one). */
     Button* getMaximiseButton() const noexcept;
 
+	// [002] Fix FullScreen Mode
+	bool toggleRealFullScreen();
+	bool isRealFullScreen();
+
     //==============================================================================
     /** A set of colour IDs to use to change the colour of various aspects of the window.
 
