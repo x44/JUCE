@@ -32,3 +32,10 @@ Workaround methods are DocumentWindow::toggleRealFullScreen() and DocumentWindow
 #### Files
 [modules/juce_gui_basics/windows/juce_DocumentWindow.h](modules/juce_gui_basics/windows/juce_DocumentWindow.h)<br/>
 [modules/juce_gui_basics/windows/juce_DocumentWindow.cpp](modules/juce_gui_basics/windows/juce_DocumentWindow.cpp)
+
+### [003] MenuBar Disappears in Real Full Screen Mode
+#### Description
+Windows only.
+#### Files
+[modules/juce_gui_basics/windows/juce_DocumentWindow.cpp](modules/juce_gui_basics/windows/juce_DocumentWindow.cpp)
+
