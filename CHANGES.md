@@ -31,4 +31,5 @@ Windows and MacOs. FullScreen mode (ie Kiosk Mode) is not working as expected.
 Workaround methods are DocumentWindow::toggleRealFullScreen() and DocumentWindow::isRealFullScreen()
 #### Files
 [modules/juce_gui_basics/windows/juce_DocumentWindow.h](modules/juce_gui_basics/windows/juce_DocumentWindow.h)
+
 [modules/juce_gui_basics/windows/juce_DocumentWindow.cpp](modules/juce_gui_basics/windows/juce_DocumentWindow.cpp)
