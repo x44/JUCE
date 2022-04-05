@@ -30,5 +30,5 @@ Windows only. When pressing ALT+TAB in Kiosk Mode (ie real fullscreen) the windo
 Windows and MacOs. FullScreen mode (ie Kiosk Mode) is not working as expected.
 Workaround methods are DocumentWindow::toggleRealFullScreen() and DocumentWindow::isRealFullScreen()
 #### Files
-[modules/juce_gui_basics/windows/juce_DocumentWindow.h](modules/juce_gui_basics/windows/juce_DocumentWindow.h)
+[modules/juce_gui_basics/windows/juce_DocumentWindow.h](modules/juce_gui_basics/windows/juce_DocumentWindow.h)<br/>
 [modules/juce_gui_basics/windows/juce_DocumentWindow.cpp](modules/juce_gui_basics/windows/juce_DocumentWindow.cpp)
