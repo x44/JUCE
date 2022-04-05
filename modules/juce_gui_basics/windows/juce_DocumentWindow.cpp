@@ -236,6 +236,14 @@ void DocumentWindow::resized()
     if (menuBar != nullptr)
         menuBar->setBounds (titleBarArea.getX(), titleBarArea.getBottom(),
                             titleBarArea.getWidth(), menuBarHeight);
+
+	// [003] MenuBar Disappears in Real Full Screen Mode
+	#if JUCE_WINDOWS
+		if (isKioskMode() && menuBar != nullptr)
+		{
+			menuBar->setBounds(0, 0, getWidth(), menuBarHeight);
+		}
+	#endif
 }
 
 BorderSize<int> DocumentWindow::getBorderThickness()
@@ -251,6 +259,14 @@ BorderSize<int> DocumentWindow::getContentComponentBorder()
         border.setTop (border.getTop()
                         + (isUsingNativeTitleBar() ? 0 : titleBarHeight)
                         + (menuBar != nullptr ? menuBarHeight : 0));
+
+	// [003] MenuBar Disappears in Real Full Screen Mode
+	#if JUCE_WINDOWS
+		if (isKioskMode() && menuBar != nullptr)
+		{
+			border.setTop(border.getTop() + menuBarHeight);
+		}
+	#endif
 
     return border;
 }
@@ -388,7 +404,7 @@ bool DocumentWindow::toggleRealFullScreen()
 		setFullScreen(wantsFullScreen);
 	}
 	#endif
-	
+
 	return wantsFullScreen;
 }
 
