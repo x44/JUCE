@@ -39,3 +39,9 @@ Windows only.
 #### Files
 [modules/juce_gui_basics/windows/juce_DocumentWindow.cpp](modules/juce_gui_basics/windows/juce_DocumentWindow.cpp)
 
+### [004] MenuBar Height Update Method
+#### Description
+Method in DocumentWindow to update the height of the menu bar to either the LF provided value or to a custom value.
+#### Files
+[modules/juce_gui_basics/windows/juce_DocumentWindow.h](modules/juce_gui_basics/windows/juce_DocumentWindow.h)<br/>
+[modules/juce_gui_basics/windows/juce_DocumentWindow.cpp](modules/juce_gui_basics/windows/juce_DocumentWindow.cpp)

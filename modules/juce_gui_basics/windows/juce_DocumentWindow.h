@@ -227,6 +227,9 @@ public:
 	bool toggleRealFullScreen();
 	bool isRealFullScreen();
 
+	// [004] MenuBar Height Update Method
+	void updateMenuBarHeight(const int newMenuBarHeight = 0);
+
     //==============================================================================
     /** A set of colour IDs to use to change the colour of various aspects of the window.
 

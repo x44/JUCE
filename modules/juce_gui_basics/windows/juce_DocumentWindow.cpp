@@ -417,4 +417,11 @@ bool DocumentWindow::isRealFullScreen()
 	#endif
 }
 
+// [004] MenuBar Height Update Method
+void DocumentWindow::updateMenuBarHeight(const int newMenuBarHeight)
+{
+	menuBarHeight = newMenuBarHeight > 0 ? newMenuBarHeight
+											: getLookAndFeel().getDefaultMenuBarHeight();
+}
+
 } // namespace juce
