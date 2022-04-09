@@ -513,13 +513,16 @@ struct MenuWindow  : public Component
                 *managerOfChosenCommand = item->commandManager;
             }
 
+			// [005] Window Looses Focus When a SubMenu Gets Hidden
+			// Moved the setVisible() call before the exitModalState() call
+            if (makeInvisible && deletionChecker != nullptr)
+                setVisible (false);
+
             auto resultID = options.hasWatchedComponentBeenDeleted() ? 0 : getResultItemID (item);
 
             exitModalState (resultID);
             exitingModalState = true;
 
-            if (makeInvisible && deletionChecker != nullptr)
-                setVisible (false);
 
             if (resultID != 0
                  && item != nullptr

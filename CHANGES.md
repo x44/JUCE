@@ -45,3 +45,11 @@ Method in DocumentWindow to update the height of the menu bar to either the LF p
 #### Files
 [modules/juce_gui_basics/windows/juce_DocumentWindow.h](modules/juce_gui_basics/windows/juce_DocumentWindow.h)<br/>
 [modules/juce_gui_basics/windows/juce_DocumentWindow.cpp](modules/juce_gui_basics/windows/juce_DocumentWindow.cpp)
+
+### [005] Window Looses Focus When a SubMenu Gets Hidden
+#### Description
+Windows only. When a SubMenu gets hidden, the menu-owning window looses the focus.
+Fixed by moving the setVisible() call before the exitModalState() call in PopupMenu::hide().
+This also seems to fix the problem where the window-close button does not work while a Menu is open.
+#### Files
+[modules/juce_gui_basics/menus/juce_PopupMenu.cpp](modules/juce_gui_basics/menus/juce_PopupMenu.cpp)
