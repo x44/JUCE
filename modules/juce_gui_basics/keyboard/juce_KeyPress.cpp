@@ -237,14 +237,15 @@ String KeyPress::getTextDescription() const
         if (textCharacter == '/' && keyCode != numberPadDivide)
             return "/";
 
-        if (mods.isCtrlDown())      desc << "ctrl + ";
-        if (mods.isShiftDown())     desc << "shift + ";
+		// [006] KeyPress Modifier Strings Upper Case
+        if (mods.isCtrlDown())      desc << "Ctrl + ";
+        if (mods.isShiftDown())     desc << "Shift + ";
 
        #if JUCE_MAC || JUCE_IOS
-        if (mods.isAltDown())       desc << "option + ";
-        if (mods.isCommandDown())   desc << "command + ";
+        if (mods.isAltDown())       desc << "Option + ";
+        if (mods.isCommandDown())   desc << "Command + ";
        #else
-        if (mods.isAltDown())       desc << "alt + ";
+        if (mods.isAltDown())       desc << "Alt + ";
        #endif
 
         for (int i = 0; i < numElementsInArray (KeyPressHelpers::translations); ++i)
@@ -261,10 +262,10 @@ String KeyPress::getTextDescription() const
         else if (keyCode == numberPadSubtract)          desc << KeyPressHelpers::numberPadPrefix() << '-';
         else if (keyCode == numberPadMultiply)          desc << KeyPressHelpers::numberPadPrefix() << '*';
         else if (keyCode == numberPadDivide)            desc << KeyPressHelpers::numberPadPrefix() << '/';
-        else if (keyCode == numberPadSeparator)         desc << KeyPressHelpers::numberPadPrefix() << "separator";
+        else if (keyCode == numberPadSeparator)         desc << KeyPressHelpers::numberPadPrefix() << "Separator";
         else if (keyCode == numberPadDecimalPoint)      desc << KeyPressHelpers::numberPadPrefix() << '.';
         else if (keyCode == numberPadEquals)            desc << KeyPressHelpers::numberPadPrefix() << '=';
-        else if (keyCode == numberPadDelete)            desc << KeyPressHelpers::numberPadPrefix() << "delete";
+        else if (keyCode == numberPadDelete)            desc << KeyPressHelpers::numberPadPrefix() << "Delete";
         else                                            desc << '#' << String::toHexString (keyCode);
     }
 

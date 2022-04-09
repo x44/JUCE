@@ -53,3 +53,10 @@ Fixed by moving the setVisible() call before the exitModalState() call in PopupM
 This also seems to fix the problem where the window-close button does not work while a Menu is open.
 #### Files
 [modules/juce_gui_basics/menus/juce_PopupMenu.cpp](modules/juce_gui_basics/menus/juce_PopupMenu.cpp)
+
+### [006] KeyPress Modifier Strings Upper Case
+#### Description
+The KeyPress Modifier Strings are lowercase by default. For example (ctrl + X) is displayed in menus.
+Changed to Ctrl, Shift, ... in KeyPress::getTextDescription().
+#### Files
+[modules/juce_gui_basics/keyboard/juce_KeyPress.cpp](modules/juce_gui_basics/keyboard/juce_KeyPress.cpp)
